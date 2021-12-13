@@ -1,0 +1,18 @@
+.box {
+    margin: 4px;
+}
+.warning {
+    color: red;
+}
+
+.younger18 {
+    background-color: lightblue;
+}
+
+.adult {
+    background-color: orangered;
+}
+
+.eldest {
+    background-color: crimson;
+}

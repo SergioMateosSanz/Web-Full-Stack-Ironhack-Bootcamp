@@ -1,0 +1,14 @@
+<input type="text" placeholder="enter text" [(ngModel)]="text">
+<h3 [ngStyle]="{'font-size.px': px}">{{text}}</h3>
+<div class="buttons">
+    <button (click)="increaseFontSize()">+</button>
+    <button (click)="decreaseFontSize()">-</button>
+</div>
+
+<div *ngIf="isLengthLongerThanSeven()">
+    <p>WARNING!! Text is longer than 7</p>
+</div>
+
+<div *ngIf="isSizeBiggerThanLongerThanThirty()">
+    <p>WARNING!! Size is bigger than 30</p>
+</div>

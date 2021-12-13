@@ -1,0 +1,23 @@
+<div class="center">
+  <div class="colorbox" (mouseover)="changeColor()" [ngStyle]="{'background-color': backgorundColorOne}">
+    <p class="title" [ngStyle]="{'color': textColorOne}"> Title 1</p>
+    <p [ngStyle]="{'color': textColorOne}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatibus, eaque quae odit aperiam maxime
+      expedita, blanditiis neque deleniti ipsa voluptatem quisquam sapiente!
+    </p>
+  </div>
+  <div class="colorbox" (mouseover)="changeColor()" [ngStyle]="{'background-color': backgorundColorTwo}">
+    <p class="title" [ngStyle]="{'color': textColorTwo}"> Title 2</p>
+    <p [ngStyle]="{'color': textColorTwo}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatibus, eaque quae odit aperiam maxime
+      expedita, blanditiis neque deleniti ipsa voluptatem quisquam sapiente!
+    </p>
+  </div>
+  <div class="colorbox" (mouseover)="changeColor()" [ngStyle]="{'background-color': backgorundColorThree}">
+    <p class="title" [ngStyle]="{'color': textColorThree}"> Title 3</p>
+    <p [ngStyle]="{'color': textColorThree}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatibus, eaque quae odit aperiam maxime
+      expedita, blanditiis neque deleniti ipsa voluptatem quisquam sapiente!
+    </p>
+  </div>
+</div>
+<div class="wrapper">
+  <button class="button" (click)="changeColor()">Colorblind mode</button>
+</div>

@@ -1,0 +1,17 @@
+.list {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkkhaki;
+}
+
+.todo {
+    background-color:orchid;
+}
+
+.done {
+    background-color: green;
+}
+
+.postpone {
+    background-color:orangered;
+}

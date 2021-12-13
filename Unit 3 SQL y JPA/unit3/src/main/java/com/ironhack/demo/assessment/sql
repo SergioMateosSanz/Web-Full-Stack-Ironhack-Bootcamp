@@ -1,0 +1,53 @@
+SQL
+This assessment is designed to test your knowledge of fundamental SQL.
+
+SQL Schema
+There exist 2 tables in a SQL database accounts and branches. You will use these tables for each of the next 4 questions, although you may not need both tables for every question.
+
+Each table follows the structure below:
+
+Accounts
+account_number	branch_id	account_type	balance	customer_name
+98273	  		1			checking		2319.34	Timothy Fusterfieck
+98274			1			checking		186.72	Kelsey Gordon
+98276			2			checking		7.42	Alvaro Rojas
+98277			3			checking		1532.72	Michael Alcocer
+Branches
+id	branch_name		city
+1	Madrid Central	Madrid
+2	Madrid Este		Madrid
+3	Toledo Central	Toledo
+branch_id in the accounts table is a foreign key to the branches table
+
+Requirements
+Write a SQL query to retreive the customer_name and balance of every account with an account_type of "checking"
+
+SELECT customer_name, balance
+FROM accounts
+WHERE account_type = 'checking';
+
+Requirements
+Write a SQL query to display the average balance grouped by account type.
+SELECT account_type, AVG(balance) AS average_balance
+FROM accounts
+GROUP BY account_type;
+
+Requirements
+Write a SQL query to retreive the customer_name and and the branch_name associated with each account.
+SELECT c.customer_name, b.branch_name
+FROM accounts AS c
+INNER JOIN branches AS b
+ON c.branch_id = b.id;
+
+Requirements
+Write a SQL query to display all the records from the Accounts table that are of checking account_type and have branch id of 2 .
+We do not want information from all the columns. Please note your output should look like this, with the exact headers (aliases),
+here case sensitive:
+
+Name	account_type	balance
+Alvaro Rojas	checking	7.42
+James Potter	checking	25.83
+
+SELECT customer_name AS Name, account_type, balance
+FROM accounts
+WHERE account_type = 'checking' AND branch_id = 2;

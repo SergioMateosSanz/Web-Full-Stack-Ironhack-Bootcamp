@@ -1,0 +1,10 @@
+Nombre, nota y nombre del instructor de todos los estudiantes
+Nombre, nota y nombre del curso de todos los estudiantes que hayan estudiado en un curso llamado “Databases”
+
+SELECT student_name, score, professor FROM grade g INNER JOIN section s ON g.section_id = s.id; 
+
+SELECT student_name, score, course_name 
+FROM grade g 
+INNER JOIN section s ON g.section_id = s.id 
+INNER JOIN course c ON c.course_code = s.course_code 
+WHERE c.course_name = 'Databases'; 

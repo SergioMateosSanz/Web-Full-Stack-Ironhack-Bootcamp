@@ -1,0 +1,11 @@
+<div class="submenu">
+    <p class="header">Categories Management</p>
+    <input type="text" placeholder="category name" [(ngModel)]="categoryName"> <br><br>
+    <input type="text" placeholder="description" [(ngModel)]="description"> <br><br>
+    <button type="submit" [disabled]="isButtonDisabled()" (click)="addCategory()">Create category</button><br><br>
+
+    <p>Category List:</p>
+    <div *ngFor="let category of categoryList">
+        <p><strong>Type:</strong> {{category.type}}, <strong>Description:</strong> {{category.description}}</p>
+    </div>
+</div>

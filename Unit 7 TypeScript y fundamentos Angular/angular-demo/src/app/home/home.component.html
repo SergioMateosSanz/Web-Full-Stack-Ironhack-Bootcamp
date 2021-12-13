@@ -1,0 +1,44 @@
+<p>This is my home component. Hello {{name}}</p>
+
+<input type="text" [placeholder]="name" value=""> <br><br>
+
+<input type="text" placeholder="last name" [value]="lastName" (keyup)="changeName($event)"> <br><br>
+
+<input type="text" placeholder="address" [(ngModel)]="address"> <br><br>
+
+<button [disabled]="isDisabled" (click)="sayHello()">Submit</button>
+
+<div *ngIf="isBoss()">
+    <p [ngStyle]="{'background-color': secretMessageBackgroundColor, 'font-size.px': 25}" (copy)="hiddenMessage()">This
+        is a SECRET message</p>
+    <button (click)="changeColor()">Change color</button>
+</div>
+
+<br><br>
+
+<app-text-editor></app-text-editor>
+
+<br><br>
+
+<h2>Shopping List</h2>
+<input type="text" placeholder="item name" [(ngModel)]="newItem" (keyup.enter)="addShoppingItem()"><br>
+<button [disabled]="isShoppingButtonDisabled()" (click)="addShoppingItem()">Add item</button>
+<ul>
+    <li *ngFor="let item of shoppingList; let i = index" [ngClass]="{'odd': i%2 !==0, 'even': i%2 ==0}">{{i}} {{item}}</li>
+</ul>
+<div *ngIf="itemIsRegistered">
+    <p class="warning">Item is previusly registered</p>
+</div>
+
+
+<h2>Shopping List with objects</h2>
+<input type="text" placeholder="item name" [(ngModel)]="shoppingItemObject"><br>
+<input type="text" placeholder="quantity" [(ngModel)]="quantity"><br>
+<button [disabled]="isShoppingObjectButtonDisabled()" (click)="addShoppingItemObject()">Add item</button>
+<ul>
+    <li *ngFor="let item of shoppingListObject; let i = index">{{item.name}} {{item.quantity}}</li>
+</ul>
+
+<app-fan-list></app-fan-list>
+
+<app-footer></app-footer>

@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "cb1f6469-74a5-4a78-88d3-faeb70496307",
+		"name": "lab6.02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "store book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\" :\"ISBN123456780\",\n    \"title\" : \"El señor de los anillos\",\n    \"author\" : \"J.R.R Tolkien\",\n    \"genre\" : \"Fantasia\",\n    \"formatList\" : [ \"hardcover\", \"paperback\", \"electronic\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store book-formats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\" : \"ISBN567890123\",\n    \"formatList\" : [ \"hardcover\", \"paperback\", \"electronic\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/book-format",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"book-format"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book formats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/book-format/ISBN567890123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"book-format",
+						"ISBN567890123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/ISBN567890123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"ISBN567890123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

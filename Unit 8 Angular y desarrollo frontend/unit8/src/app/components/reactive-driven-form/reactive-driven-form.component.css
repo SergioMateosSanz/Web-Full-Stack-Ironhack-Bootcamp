@@ -1,0 +1,13 @@
+.error-msg {
+    color: red;
+    font-size: 0.7rem;
+  }
+  
+  form .ng-invalid.ng-touched{
+    border: 2px solid crimson;
+  }
+  
+  form select,
+  form input {
+    margin: 0.5rem 0;
+  }

@@ -1,0 +1,5 @@
+1. Eureka: descubridor de servicios. Inventario de microservicios, acceso directo a través de Eureka
+2. OpenFeign: peticiones HTTP para invocar a otros microservicios
+3. SpringCloudLoadBalancer: manejo del balanceo de carga (incluido en la dependencia de OpenFeign)
+4. Resilence4j - CIrcuitBreaker: manejo del patrón Circuit Breaker (tolerancia a fallos)
+5. Spring Cloud Config Server: externalizar la configuración de cada servicio

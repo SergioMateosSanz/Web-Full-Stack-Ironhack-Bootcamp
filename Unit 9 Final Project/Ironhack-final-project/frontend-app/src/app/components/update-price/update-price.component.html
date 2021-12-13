@@ -1,0 +1,17 @@
+<div class="submenu">
+    <p class="header">Price Management</p><br>
+    Article Id <input type="number" placeholder="id" [(ngModel)]="articleId" name="id"> <br>
+    Price <input type="number" placeholder="price" [(ngModel)]="price" name="price"> <br>
+    <button type="submit" [disabled]="isButtonDisabled()" (click)="updatePrice()">Update</button> <br><br>
+
+    <p>Article List:</p>
+    <div *ngFor="let article of articleList">
+        <p><strong>Id:</strong> {{article.id}} <strong>Name:</strong> {{article.name}} <strong>Category:</strong> {{article.category}} 
+            <strong>Brand:</strong> {{article.brand}} <strong>Description:</strong> {{article.description}} <strong>Price:</strong>{{article.price}}€
+            <strong>Image:</strong>{{article.imageUrl}} <strong>Stock:</strong>
+            <span *ngFor="let stock of article.stockList">
+                size - {{stock.size}} , units - {{stock.units}}
+            </span>
+        </p>
+    </div>
+</div>

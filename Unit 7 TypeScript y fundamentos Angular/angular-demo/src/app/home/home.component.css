@@ -1,0 +1,17 @@
+p{ 
+    color: green; 
+}
+
+.odd {
+    background-color: gray;
+    color: black
+}
+
+.even {
+    background-color:crimson;
+    color: white;
+}
+
+.warning {
+    color: red;
+}

@@ -1,0 +1,2 @@
+Person{id=1, name='Juana De Arco', age=30, occupation='Warrior'}
+Person{id=0, name='null', age=0, occupation='null'}

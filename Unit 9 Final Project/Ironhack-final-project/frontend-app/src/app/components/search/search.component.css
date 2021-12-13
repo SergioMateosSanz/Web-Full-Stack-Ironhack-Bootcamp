@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 1.7rem;
+}
+
+#contactForm {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.thirty-width {
+    width: 30%;
+}
+
+.container {
+    padding: 0.3rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.item {
+    border-style: double;
+    flex-grow: 1;
+    margin: 0.3rem;
+    border-color: black;
+    border-width: 0.2rem;
+    padding: 0.2rem;
+}
+
+.warning {
+    font-size: 3rem;
+    color: red;  
+}

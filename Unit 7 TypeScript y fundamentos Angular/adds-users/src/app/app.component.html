@@ -1,0 +1,18 @@
+<h2> Users List</h2>
+<div (keyup.enter)="addUser()">
+  <input type="text" placeholder="user name" [(ngModel)]="name" class="box">
+  <input type="text" placeholder="user age"class="box" [(ngModel)]="age">
+  <input type="text" placeholder="user email" class="box" [(ngModel)]="email">
+  <input type="radio" id="gender" name="userGender" value="male" [(ngModel)]="gender"><label>Male</label>
+  <input type="radio" id="gender" name="userGender" value="female" [(ngModel)]="gender"><label>Female</label>
+</div>
+<button (click)="addUser()">Add User</button>
+<div *ngIf="negativeAge()">
+  <p class="warning">User age can not be negative</p>
+</div>
+<ul>
+  <li *ngFor="let item of userList; let i = index" 
+    [ngClass]="{'younger18': item.age < 18, 'adult': (item.age > 17 && item.age < 66), 'eldest': item.age > 65}">
+    {{i+1}} {{item.name}} {{item.age}} {{item.email}} {{item.gender}}
+  </li>
+</ul>

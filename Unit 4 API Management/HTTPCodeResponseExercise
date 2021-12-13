@@ -1,0 +1,7 @@
+A user clicks on a friend on Facebook, but that friend has deleted their profile and the account no longer exists.									404
+A user registers for a web service and a new account is successfully created.													201
+A user tries to access a Google Doc document but they are not logged in.														401
+A user tries to access their bank account. They are logged in and the action is successful.												200
+An online hardware store recently underwent a full website restructure. A user tries to access an old book mark, but the product they are looking for has been moved.		301
+A user is attempting to transfer money. As the amount to transfer they have specified "jhy$%1"											400 (422)
+A user attempts to access a resource. The server is in fact not a server but a teapot.												418			

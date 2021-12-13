@@ -1,0 +1,32 @@
+<h2>Task TO DO. Angular Ironhack Lab 7.06</h2>
+<div id="header">
+  <input type="text" placeholder="introduce task to do" [(ngModel)]="taskName">
+  <button (click)="addTask()">Add</button>
+  <button (click)="clear()">Clean</button>
+  <button (click)="restore()">Restore</button>
+</div>
+<br>
+
+<section class="list">
+  <div>
+    <h4>TO DO</h4>
+    <div *ngFor="let item of toDoList; let i = index" class="todo">
+      <p>{{item.description}}</p>
+      <button (click)="completeTask(i)">Complete</button>
+      <button (click)="postponeTask(i)">Postpone</button>
+      <button (click)="deleteTask(i)">Delete</button>
+    </div>
+  </div>
+  <div>
+    <h4>DONE</h4>
+    <div *ngFor="let item of doneList; let i = index" class="done">
+      <p [ngStyle]="{'background-color': item.backgroundColor}">{{item.description}}</p>
+    </div>
+  </div>
+  <div>
+    <h4>POSTPONE</h4>
+    <div *ngFor="let item of postponeList; let i = index" class="postpone">
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+</section>

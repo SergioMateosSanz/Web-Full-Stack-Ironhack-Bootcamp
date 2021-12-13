@@ -1,0 +1,69 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput placeholder="Name..." formControlName="name">
+            <mat-error *ngIf="nameInput.hasError('required') && (nameInput.touched || nameInput.dirty)">
+                Name is required
+            </mat-error>
+            <mat-error *ngIf="nameInput.hasError('noPepito') && (nameInput.touched || nameInput.dirty)">
+                <strong>Pepito</strong> is not allowed
+            </mat-error>
+            <mat-error *ngIf="nameInput.hasError('noContainDigits') && (nameInput.touched || nameInput.dirty)">
+                Digits is not allowed
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="Email..." formControlName="email">
+            <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+                Please enter a valid email
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input type="text" matInput formControlName="age">
+            <mat-error *ngIf="ageInput.invalid && ageInput.touched">
+                Please enter a valid age, age must between 18 and 99
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select [formControl]="genders" multiple>
+              <mat-select-trigger>
+                {{genders.value ? genders.value[0] : ''}}
+                <span *ngIf="genders.value?.length > 1">
+                  (+{{genders.value.length - 1}} {{genders.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let item of genderList" [value]="item">{{item | titlecase}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error *ngIf="passwordInput.invalid && passwordInput.touched">
+                Please enter a valid Password
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Password confirmation</mat-label>
+            <input type="password" matInput formControlName="passwordConfirmation">
+            <mat-error *ngIf="registerForm.hasError('passwordsEquals') && (passwordConfirmationInput.touched)">
+                Passwords are not equal
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,6 @@
+<p (click)="showDetails()">{{employee.name}}</p>
+<div *ngIf="isDetails">
+    <h4>Details</h4>
+    Phone Number: {{employee.phoneNumber}} Office Number: {{employee.officeNumber}} Position: {{employee.position}} Manager: {{employee.manager}} <br>
+    <button (click)="deleteEmployee(employee.id)">Delete Employee</button>
+</div>

@@ -1,0 +1,2 @@
+IntArrayList será más eficiente para listas de tamaño inferior o igual a 10 elementos. No malgasta espacio en memoria como lo hace IntVector para esos casos.
+IntVector será más eficiente para listas de tamaño entre 10 y 20 elementos dónde no es necesario crear nuevo array como sucede en la clase IntArrayList.

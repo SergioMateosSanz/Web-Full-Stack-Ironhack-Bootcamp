@@ -1,0 +1,39 @@
+<div class="submenu">
+    <p class="header">Articles Management</p><br>
+
+    Name <input type="text" placeholder="name" [(ngModel)]="name" name="name"> <br>
+    Category <select [(ngModel)]="category" required name="category">
+        <option *ngFor="let categoryItem of categoryList">{{categoryItem}}</option>
+      </select> <br>
+    Brand <input type="text" placeholder="brand" [(ngModel)]="brand" name="brand"> <br>
+    Description <input type="text" placeholder="description" [(ngModel)]="description" name="description"> <br>
+    Image name <input type="text" placeholder="image name" [(ngModel)]="imageurl" name="imageurl"> <br>
+    Price <input type="number" placeholder="price" [(ngModel)]="price" name="price"> <br>
+    Size 
+    <select [(ngModel)]="size">
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+    </select> <br>
+    Units <input type="number" placeholder="units" [(ngModel)]="units" name="units"> <br>
+    <button type="submit" [disabled]="isButtonDisabled()" (click)="addArticle()">Add new article</button> <br><br>
+
+    <p>Article List:</p>
+    <select [(ngModel)]="articleId" required name="articleId">
+        <option value="" selected>Please select a article id...</option>
+        <option *ngFor="let article of articleList">{{article.id}}</option>
+    </select> <br>
+    <button type="submit" [disabled]="isButtonDeleteDisabled()" (click)="deleteArticle()">Delete</button>
+    <div *ngFor="let article of articleList">
+        <p><strong>Id:</strong> {{article.id}} <strong>Name:</strong> {{article.name}} <strong>Category:</strong> {{article.category}} 
+            <strong>Brand:</strong> {{article.brand}} <strong>Description:</strong> {{article.description}} <strong>Price:</strong>{{article.price}}
+            <strong>Image:</strong>{{article.imageUrl}} <strong>Stock:</strong> 
+            <span *ngFor="let stock of article.stockList">
+                size - {{stock.size}} , units - {{stock.units}}
+            </span>
+        </p>
+    </div>
+</div>

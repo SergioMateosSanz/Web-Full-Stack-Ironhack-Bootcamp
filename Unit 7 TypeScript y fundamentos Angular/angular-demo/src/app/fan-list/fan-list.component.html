@@ -1,0 +1,28 @@
+<h2>Fan List</h2>
+<input type="text" placeholder="name" [(ngModel)]="fanName" (keyup.enter)="addFan()">
+<input type="text" placeholder="age" [(ngModel)]="fanAge" (keyup.enter)="addFan()">
+<input type="text" placeholder="country" [(ngModel)]="fanCountry" (keyup.enter)="addFan()">
+<select [(ngModel)]="team">
+    <option value="madrid">Real Madrid C.F.</option>
+    <option value="barcelona">F.C. Barcelona</option>
+</select>
+<br><br>
+<button (click)="addFan()">Add fan</button>
+
+<section class="box">
+    <h3>Real Madrid fans</h3>
+    <button (click)="addRandomFan('madrid')">Add random fan</button><br>
+    <div *ngFor="let item of madridFanList; let i = index">
+         <app-fan-item [fanProperty]="item" (removeFanEvent)="deleteFan(i, 'madrid')"
+         (sendAlertEvent)="sendAlertReceived($event)"
+         (sendConmuteEvent)="changeTeam(i, 'madrid')"></app-fan-item>
+    </div>
+
+    <h3>F.C.Barcelona fans</h3>
+    <button (click)="addRandomFan('barcelona')">Add random fan</button><br>
+    <div>
+        <app-fan-item *ngFor="let item of barcelonaFanList let i = index" [fanProperty]="item"
+        (removeFanEvent)="deleteFan(i, 'barcelona')" (sendAlertEvent)="sendAlertReceived($event)"
+        (sendConmuteEvent)="changeTeam(i, 'barcelona')"></app-fan-item>
+    </div>
+</section>

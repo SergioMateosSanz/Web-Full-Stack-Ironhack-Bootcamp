@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+    <div>
+        <input type="text" placeholder="Name..." formControlName="name">
+        <p class="error-msg" *ngIf="nameInput.hasError('required')  && (nameInput.touched || nameInput.dirty)">The name
+            is required</p>
+        <p class="error-msg" *ngIf="nameInput.hasError('noPepito')  && (nameInput.touched || nameInput.dirty)">Pepito is
+            not allowed >:(</p>
+        <p class="error-msg" *ngIf="nameInput.hasError('noDigits')  && (nameInput.touched || nameInput.dirty)">The name
+            cannot contain digits</p>
+    </div>
+    <div>
+        <input type="text" placeholder="Email..." formControlName="email">
+        <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email</p>
+    </div>
+    <div>
+        <input type="number" placeholder="Age..." formControlName="age">
+        <p class="error-msg" *ngIf="ageInput.invalid && ageInput.touched">Please enter a valid age, age must between 18
+            and 99</p>
+    </div>
+    <div>
+        <select formControlName="gender">
+            <option value="" invalid>Please select a gender</option>
+            <option *ngFor="let item of genders" [value]="item">{{item | titlecase}}</option>
+        </select>
+        <p class="error-msg" *ngIf="genderInput.invalid && genderInput.touched">Please select a valid gender</p>
+    </div>
+    <div>
+        <input type="password" placeholder="Password..." formControlName="password">
+        <p class="error-msg" *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a valid Password</p>
+    </div>
+    <div>
+        <input type="password" placeholder="Password confirmation.." formControlName="passwordConfirmation">
+        <p class="error-msg" *ngIf="registerForm.hasError('passwordsEquals') && (passwordConfirmationInput.touched)">
+            Passwords are not equal</p>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+</form>

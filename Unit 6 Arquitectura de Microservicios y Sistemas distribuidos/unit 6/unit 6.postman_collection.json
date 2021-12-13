@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "f8b9640f-14e0-4969-84d4-d3740d36b484",
+		"name": "unit 6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello-world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello-world",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello-world"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get complete user info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/complete-user-info?id=1&salary=1000&department=Sales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"complete-user-info"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "salary",
+							"value": "1000"
+						},
+						{
+							"key": "department",
+							"value": "Sales"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view config service properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/eurekaservice/dev",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"eurekaservice",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

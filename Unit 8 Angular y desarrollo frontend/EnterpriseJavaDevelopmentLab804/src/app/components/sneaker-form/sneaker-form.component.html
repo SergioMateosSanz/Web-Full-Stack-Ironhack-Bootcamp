@@ -1,0 +1,74 @@
+<div class="form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Model name</mat-label>
+                <input type="text" matInput formControlName="modelName">
+                <mat-error *ngIf="modelNameInput.invalid && modelNameInput.touched">
+                    Please enter a model name
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput formControlName="price">
+                <mat-error *ngIf="priceInput.invalid && priceInput.touched">
+                    Please enter a valid price
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="demo-full-width" appearance="fill">
+                <mat-label>Choose special edition</mat-label>
+                <select matNativeControl [formControl]="specialEditionInput">
+                    <option value=""></option>
+                    <option value="true" selected>true</option>
+                    <option value="false">false</option>
+                </select>
+                <mat-error *ngIf="specialEditionInput.invalid && specialEditionInput.touched">You must make a selection
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Author</mat-label>
+                <input type="text" matInput formControlName="author">
+                <mat-error *ngIf="authorInput.invalid && authorInput.touched">
+                    Please enter a valid author
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Creation date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="creationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="creationDateInput.invalid && creationDateInput.touched">
+                    Please enter a creation date
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Artist collaborator</mat-label>
+                <input type="text" matInput formControlName="artistCollaborator">
+            </mat-form-field>
+        </div>
+
+        <div class="error" *ngIf="registerForm.hasError('isSpecialEditionAndArtistCollaboratorMustBeInformed')">
+            Artist colaborator must be informed
+        </div>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
+
+    </form>
+
+    <br><br>
+    <h3>Sneaker List</h3>
+    <div *ngFor="let item of sneakerList">
+        {{item.modelName}} {{item.price}} {{item.specialEdition}} {{item.author}} {{item.creationDate}}
+        {{item.artistCollaborator}}
+    </div>
+</div>

@@ -1,0 +1,17 @@
+///////////////////// Useful links ///////////////////////
+
+Progressive Web Apps: https://web.dev/progressive-web-apps/
+
+Examples of Progressive Web Apps: https://www.simicart.com/blog/progressive-web-apps-examples/#12_Spotify
+
+FlutterFlow: https://flutterflow.io/
+
+Kotlin Playground: https://play.kotlinlang.org/byExample/overview
+
+Guide to Android development for beginners: https://www.androidauthority.com/android-app-development-1128595/
+
+Swift Playgrounds: https://www.apple.com/swift/playgrounds/
+
+
+
+

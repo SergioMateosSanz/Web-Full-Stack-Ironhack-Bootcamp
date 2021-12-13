@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div>
+      <input type="text" placeholder="Email..." [(ngModel)]="user.email" required email name="email" #emailInput="ngModel">
+      <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email >:(</p>
+    </div>
+    <div>
+      <input type="password" placeholder="Password..." [(ngModel)]="user.password" required minlength="8" name="password" #passwordInput="ngModel">
+      <p class="error-msg" *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)">Please password length should be at least 8 characters</p>
+    </div>
+  
+    <div>
+      <select [(ngModel)]="user.role" required name="role" #roleInput="ngModel">
+        <option value="user">User</option>
+        <option value="operator">Operator</option>
+        <option value="admin">Admin</option>
+      </select>
+      <p class="error-msg" *ngIf="roleInput.invalid && roleInput.touched">Please select a role</p>
+    </div>
+  
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+    <button type="reset">Reset</button>
+    <button type="button" (click)="doSomething()">Do something</button>
+  
+  </form>

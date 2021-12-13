@@ -1,0 +1,6 @@
+<h1>Employee list</h1>
+
+<button (click)="loadEmployeeList()">Load Employee List</button><br>
+<div *ngFor="let item of employeeList let i = index">
+    <app-employee-item [employeeProperty]="item" (sendAlertEvent)="sendAlertReceived()"></app-employee-item>
+</div>
